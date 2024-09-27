@@ -1,6 +1,3 @@
-'use strict';
-const UserModel = require('../models/usermodel');
-exports.storeOsName = async (req, res) => {
     const { user } = req.body; // Expecting user details (from Auth0)
     console.log(req.body)
 
@@ -33,4 +30,3 @@ exports.storeOsName = async (req, res) => {
         console.error('Error logging in user:', error);
         return res.status(500).json({ error: 'An error occurred during login' });
     }
-};

@@ -22,8 +22,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <Auth0Provider
-    domain="dev-z5crap14pqk1slzj.us.auth0.com"
-    clientId="2GPo6NzNLVvRfbCeYZ0ViWgixmkhwF5F"
+    domain="dev-r0gwhgnlyas2rmvo.us.auth0.com"
+    clientId="X8okWa1Kmv7YJ8BKA8mrVNBlQXZA4hJv"
     authorizationParams={{
       redirect_uri: window.location.origin
     }}

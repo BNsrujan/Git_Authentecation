@@ -12,7 +12,7 @@ const CardsComponent: React.FC = () => {
 
     const handalClick = async (name: string) => {
         try {
-            const responce = await (fetch('http://localhost:3000/api/os', {
+            const responce = await (fetch('http://localhost:3000/api/terminal', {
                 method: 'post',
                 headers: {
                     'content-Type': 'application/json'

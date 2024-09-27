@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
 
 
-const userSchema = new mongoose.Schema({
+const OsSchema = new mongoose.Schema({
     name: { type: String, require: true }
 })
 
-const model = new mongoose.model('model', userSchema)
+
+const model = new mongoose.model('model', OsSchema)
 
 
 module.exports = model;

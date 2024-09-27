@@ -14,7 +14,8 @@ dotenv.config()
 const connectToMongo = require('./db')
 connectToMongo()
 
-app.use('/api/os', osRoute);
+app.use('/api', osRoute);
+
 
 app.listen(3000, () => {
     console.log('server is running on port 3000')
