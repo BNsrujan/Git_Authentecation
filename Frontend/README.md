@@ -1,50 +1,131 @@
-# React + TypeScript + Vite
+# Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React TypeScript application with Auth0 authentication and terminal functionality.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Authentication**: Secure user authentication using Auth0
+- **User Management**: User profile display with dropdown menu
+- **Terminal Interface**: Interactive terminal components
+- **Routing**: Client-side routing with React Router
+- **Modern Stack**: Built with React 18, TypeScript, and Vite
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Framework**: React 18.3.1
+- **Language**: TypeScript
+- **Build Tool**: Vite 5.4.1
+- **Authentication**: Auth0 React SDK
+- **Routing**: React Router DOM 6.26.2
+- **Linting**: ESLint with TypeScript support
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (version 16 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Navigate to the Frontend directory:
+   ```bash
+   cd Frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure Auth0:
+   - Update the Auth0 domain and client ID in `src/main.tsx`
+   - Set up your Auth0 application with the correct callback URLs
+
+### Development
+
+Start the development server:
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The application will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Build
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Create a production build:
+```bash
+npm run build
 ```
+
+### Linting
+
+Run ESLint to check code quality:
+```bash
+npm run lint
+```
+
+### Preview
+
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+Frontend/
+├── src/
+│   ├── components/
+│   │   ├── nav.tsx          # Navigation with Auth0 integration
+│   │   ├── cards.tsx        # Card components with terminal interaction
+│   │   └── terminal.tsx     # Terminal interface component
+│   ├── App.tsx              # Main application component
+│   ├── main.tsx             # Application entry point with Auth0 provider
+│   ├── index.css            # Global styles
+│   └── vite-env.d.ts        # Vite type definitions
+├── package.json             # Dependencies and scripts
+├── vite.config.ts           # Vite configuration
+├── tsconfig.json            # TypeScript configuration
+└── eslint.config.js         # ESLint configuration
+```
+
+## Components
+
+### Nav Component
+- Handles user authentication state
+- Displays user profile with dropdown menu
+- Login/logout functionality
+
+### Cards Component
+- Interactive cards that trigger terminal sessions
+- Makes API calls to backend terminal endpoint
+- Navigation to terminal routes
+
+### Terminal Component
+- Displays terminal interface
+- Uses URL parameters for terminal identification
+
+## Authentication
+
+The application uses Auth0 for authentication with the following features:
+- Social login integration
+- User profile management
+- Secure token handling
+- Automatic redirect handling
+
+## API Integration
+
+The frontend communicates with a backend API running on `http://localhost:3000` for terminal functionality.
+
+## Contributing
+
+1. Follow the existing code style and TypeScript conventions
+2. Run linting before committing: `npm run lint`
+3. Ensure all components are properly typed
+4. Test authentication flows thoroughly
+
+## License
+
+This project is private and not licensed for public use.
