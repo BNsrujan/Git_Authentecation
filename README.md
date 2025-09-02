@@ -4,7 +4,7 @@ This React TypeScript application implements GitHub authentication using Auth0
 
 ## Current Implementation Overview
 
-Your app uses:
+ app uses:
 - **Auth0** for authentication management
 - **GitHub** as a social login provider through Auth0
 - **React Router** for navigation
